@@ -1,0 +1,27 @@
+{
+  "name": "shopify-medusa-product-sync",
+  "version": "1.0.0",
+  "description": "Syncs products (details, images, categories, prices, inventory) from Shopify to MedusaJS via their APIs, with upsert support for existing products.",
+  "main": "dist/index.js",
+  "type": "module",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "sync": "node --loader ts-node/esm src/index.ts",
+    "sync:full": "node --loader ts-node/esm src/index.ts --full",
+    "sync:dry-run": "node --loader ts-node/esm src/index.ts --dry-run",
+    "start": "node dist/index.js"
+  },
+  "dependencies": {
+    "@medusajs/js-sdk": "^2.4.0",
+    "dotenv": "^16.4.5",
+    "node-fetch": "^3.3.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
